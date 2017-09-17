@@ -1,0 +1,22 @@
+{
+  "data"  : [
+    {
+     "name":"ahmed" ,
+      "age":"10",
+      "happy":"yes"
+    },
+        {
+     "name":"rayan" ,
+      "age":"13",
+          "happy":"no"
+    },
+    {
+     "name":"khaled" ,
+      "age":"19",
+      "happy":"yes"
+    }
+  ]
+  
+  
+  
+}

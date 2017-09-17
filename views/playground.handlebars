@@ -1,0 +1,69 @@
+    <script>
+     /* 
+      $(document).ready(function() {
+        $('#datatable-checkbox').DataTable( {
+            "ajax": "/get-data",
+            "columns": [
+                  { data: 'Name' },
+                  { data: 'Email' },
+                  { data: 'Phone' },
+                  { data: 'Order Type' },
+                  { data: 'Desc' },
+                  { data: 'id' }
+            ]
+        } );
+      } );*/
+          /*$('#datatable-checkbox').DataTable( 
+              $.ajax({
+                url: '/get-data',
+                dataSrc: 'data',
+                columns: [
+                  { data: 'Name' },
+                  { data: 'Email' },
+                  { data: 'Phone' },
+                  { data: 'Order Type' },
+                  { data: 'Desc' },
+                  { data: 'id' }
+                ]
+              }));*/
+      
+            
+          
+
+                  $.ajax({
+                url: '/get-data',
+                type: 'GET',
+                success: function(data){
+                  for (var i = 0; i < data.length; i++) {
+                  var name = data[i].Name;
+                  var email = data[i].Email;
+                  var phone = data[i].Phone;
+                  var temp = data[i];
+                  var orderType = temp['Order Type']
+                  var desc = data[i].Desc;
+                  var id = data[i].id;
+                  
+                  $("tbody").append(
+                    $("<tr>").append(
+                      $("<td>").append(""),
+                      $("<th>").append(
+                        $("<input>").addClass('flat').attr('type','checkbox').attr('id','check-all')
+                      ),
+                      $("<td>").text(name),
+                      $("<td>").text(email),
+                      $("<td>").text(phone),
+                     $("<td>").text(orderType),
+                      $("<td>").text(desc),
+                      $("<td>").text(id),
+                    ).attr('role','row').addClass("odd")
+                  
+                  ); 
+                    
+                    
+                    
+                  }
+                }
+              });
+
+
+    </script>

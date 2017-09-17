@@ -1,0 +1,122 @@
+<div class="requests purpleBox">
+  <form class="form_order" id="form_id">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+          <p class="requestsText">منطقة الطلبات</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+          <p class="requestsSubText">
+            ممكن تعبي بيانات الطلب لو سمحت
+          </p>
+        </div>
+      </div>
+    
+      <div class="form-group row">
+        <div class="col-xs-9 col-sm-6 col-md-6 text-right">
+          <input class="form-control text-right" type="text" name="name" id="name" placeholder="إسمك الثلاثي">
+        </div>
+          
+      <label for="Name" class="col-xs-3 col-sm-6 col-md-6 col-form-label lableText">اسمك</label>
+    </div>
+      <div class="form-group row">
+        <div class="col-xs-9 col-sm-6 col-md-6 text-right">
+          <input class="form-control text-right" type="text" name="email" id="email" placeholder="الإيميل الي حيوصلك عليه رقم الطلب">
+        </div>
+        <label for="Name" class="col-xs-3 col-sm-6 col-md-6 col-form-label lableText">الإيميل
+        </label>
+      </div>
+    
+      <div class="form-group row">
+        <div class="col-xs-9 col-sm-6 col-md-6 text-right">
+          <input class="form-control text-right" type="tel" name="phone" id="phone" placeholder="رقم الجوال">
+        </div>
+        <label for="Name" class="col-xs-3 col-sm-6 col-md-6 col-form-label lableText">الجوال</label>
+      </div>
+    
+      <div class="row">
+        <div class="col-xs-9 col-sm-6 col-md-6 text-right">
+          <div class="btn-group btn-group orderType" data-toggle="buttons">
+            <label class="btn active">
+              <span style="color:#3ddcaa">  تصميم</span>
+              <input type="radio" value="design" name='orderType' id="orderType">
+              <i class="fa fa-circle-o fa-2x"></i>
+              <i class="fa fa-dot-circle-o fa-2x"></i> 
+            </label>
+            <label class="btn">
+              <span style="color:#3ddcaa"> صوتيات</span>
+              <input type="radio" value="audio" name='orderType'>
+              <i class="fa fa-circle-o fa-2x"></i>
+              <i class="fa fa-dot-circle-o fa-2x"></i>
+            </label>
+          </div>
+        </div>
+        <label for="Name" class="col-xs-3 col-sm-6 col-md-6 col-form-label lableText" style="color:#3ddcaa">نوع الطلب</label>
+      </div>
+      
+    <br>
+      
+      <div class="form-group row">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center desc">
+          <p class="lableText" style="color:#3ddcaa">
+            خد راحتك وأشرح طلبك وحفهمك
+          </p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center desc">
+              <textarea class="form-control descField text-right"                                                 name="desc" id="desc" rows="3" 
+                        placeholder="ياريت تشرح طلبك بقدر المستطاع وبعدها حأتواصل معاك لو فيه أي شيء مو واضح"></textarea>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+      <button class="btn-submit btn submitButton" style="display: none;">
+                إرسال الطلب</button>
+    </div>
+  </form>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-bottom:15px">
+        <button class="btn-submit btn form_table">
+                إرسال الطلب</button>
+      </div>
+    </div>
+  </div>
+      <script>
+        $( ".form_table" ).click(function() {
+    
+        if( (!$('#name').val())    || ( !$('#email').val() ) ||
+        ( !$('#phone').val() ) || ( !$('#orderType').val() ) ||
+        ( !$('#desc').val() ) ){
+      console.log('orderType needs to be checked');
+      $.alert({
+        title: 'فيه بيانات ناقصة!',
+        content: 'ممكن تعبي الطلب كامل',
+        type:'red',
+      });
+      setTimeout(function() {// to add the styling after the alert is loaded
+        $('.jconfirm-scrollpane').attr('style','overflow-x: hidden;overflow-y: hidden');
+        $('.jconfirm-title').attr('style',"font-family: 'Harmattan', sans-serif;");   
+        $('.jconfirm-content').attr('style',"font-family: 'Harmattan', sans-serif;");   
+      }, 1);
+    }else{
+        $('.form_order').attr('action', '/process?form=order');
+        $('.form_order').attr('method', 'POST');
+        $( "form:first" ).trigger( "submit" );
+      }
+    
+  });
+        $(document).keypress(function(e) {
+          if(e.which == 13) {
+            alert('You pressed enter!');
+          }
+        });
+      </script>    
+
+
+</div>
