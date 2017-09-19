@@ -1,3 +1,4 @@
+
 <div class="requests purpleBox">
   <form class="form_order" id="form_id">
     <div class="container">
@@ -88,6 +89,28 @@
     </div>
   </div>
       <script>
+        
+      $(document).ready(function() {
+        $('#email').focusout(function(){
+          $('#email').filter(function(){
+            var emil=$('#email').val();
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            if( !emailReg.test( emil ) ) {
+              $.alert({
+                title: 'الرجاء إدخال إيميل صحيح',
+                type:'red',
+              });
+            } else {
+            }
+          })
+        });
+      });
+
+        
+        jQuery(function($){
+          $("#phone").mask("(999) 999-9999");
+        });
+        
         $( ".form_table" ).click(function() {
     
         if( (!$('#name').val())    || ( !$('#email').val() ) ||

@@ -1,15 +1,5 @@
 body {
-  background-color: #F5F3EE ;
-}
-.temp_bar{
-  font-family: 'Harmattan', sans-serif;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #e99a1e;
-  color:#4e4575 ;
-  height: 40px;
-  z-index: 32;
+  background-color: #212B35 ;
 }
 .header_web{
   height: 200px;
@@ -73,7 +63,7 @@ body {
 
 .greenBox{
   font-family: 'Harmattan', sans-serif;
-  background-color: #D9853B;
+  background-color: #30D1A1;
   height: 80px;
 }
 
