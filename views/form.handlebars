@@ -100,6 +100,11 @@
                 title: 'الرجاء إدخال إيميل صحيح',
                 type:'red',
               });
+                    setTimeout(function() {// to add the styling after the alert is loaded
+        $('.jconfirm-scrollpane').attr('style','overflow-x: hidden;overflow-y: hidden');
+        $('.jconfirm-title').attr('style',"font-family: 'Harmattan', sans-serif;");   
+        $('.jconfirm-content').attr('style',"font-family: 'Harmattan', sans-serif;");   
+      }, 1);
             } else {
             }
           })
