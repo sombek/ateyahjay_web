@@ -9,8 +9,8 @@
   var transporter = nodemailer.createTransport({ // Nodemailer initiliztion
     service: 'gmail',
     auth: { //Your Email info
-      user: 'abdullah97hashim@gmail.com', 
-      pass: '231324aa'
+      user: 'info@ateyahjay.com', 
+      pass: 'dadada11'
     }
   });
 
@@ -294,5 +294,5 @@ var path = require('path');
 */
 
   //Port Setup
-  app.listen(process.env.PORT || 3000);
+  app.listen(3000,()=>{console.log('running on port 3000')});
   // 'process.env.PORT' for heroku deployment purposes 
